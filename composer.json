@@ -1,0 +1,28 @@
+{
+    "name": "moleculezz/serviio-php",
+    "description": "PHP wrapper for the Serviio API.",
+    "version": "0.1",
+    "type": "library",
+    "keywords": [
+        "serviio",
+        "php",
+        "api"
+    ],
+    "homepage": "http://github.com/moleculezz/serviio-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "G. Arends",
+            "email": "gdarends@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Serviio": "src"
+        }
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "Buzz": "0.7.*"
+    }
+}
