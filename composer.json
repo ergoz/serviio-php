@@ -23,6 +23,6 @@
     },
     "require": {
         "php": ">=5.3.0",
-        "Buzz": "0.7.*"
+        "kriswallsmith/buzz": "v0.7"
     }
 }
