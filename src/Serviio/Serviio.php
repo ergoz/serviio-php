@@ -68,9 +68,7 @@ class Serviio
 
         $client = new Curl();
         $client->send($request, $response);
-
-        return $response->getContent();
-
+        return $response;
     }
 
     private function post($resource, $content)
@@ -83,7 +81,7 @@ class Serviio
 
         $client = new Curl();
         $client->send($request, $response);
-        return $response->getContent();
+        return $response;
     }
 
     public function getStatus()
