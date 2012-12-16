@@ -20,6 +20,14 @@ class Configuration extends Serviio
         return $this->get('library-status');
     }
 
+    /**
+     * @param      $operation
+     * Available operations: forceVideoFilesMetadataUpdate, forceLibraryRefresh, forceOnlineResourceRefresh,
+     *                          startServer, stopServer, exitServiio, advertiseService, checkStreamUrl
+     * @param null $parameters
+     *
+     * @return \Buzz\Message\Response
+     */
     public function action($operation, $parameters = null)
     {
         $data = array('name' => $operation);
