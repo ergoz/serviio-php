@@ -24,11 +24,11 @@ class Configuration extends Serviio
      * @param      $operation
      * Available operations: forceVideoFilesMetadataUpdate, forceLibraryRefresh, forceOnlineResourceRefresh,
      *                          startServer, stopServer, exitServiio, advertiseService, checkStreamUrl
-     * @param null $parameters
+     * @param array $parameters
      *
      * @return \Buzz\Message\Response
      */
-    public function action($operation, $parameters = null)
+    public function action($operation, $parameters = array())
     {
         $data = array('name' => $operation);
 
