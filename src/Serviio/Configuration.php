@@ -36,9 +36,21 @@ class Configuration extends Serviio
     }
 
     /**
+     * @param $property
+     * Available properties: cpu-cores, profiles, metadataLanguages, browsingCategoriesLanguages, descriptiveMetadataExtractors,
+     *                       categoryVisibilityTypes, onlineRepositoryTypes, onlineContentQualities, accessGroups, remoteDeliveryQualities
+     *
+     * @return \Buzz\Message\Response
+     */
+    public function getRefdata($property)
+    {
+        return $this->get('refdata/'.$property);
+    }
+
+    /**
      * @param      $operation
      * Available operations: forceVideoFilesMetadataUpdate, forceLibraryRefresh, forceOnlineResourceRefresh,
-     *                          startServer, stopServer, exitServiio, advertiseService, checkStreamUrl
+     *                       startServer, stopServer, exitServiio, advertiseService, checkStreamUrl
      * @param array $parameters
      *
      * @return \Buzz\Message\Response
