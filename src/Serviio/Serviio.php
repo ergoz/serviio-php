@@ -70,12 +70,15 @@ class Serviio
         $this->api = $api;
     }
 
-    private function request($method, $resource, $header, $content = null)
+    private function request($method, $resource, $headers = array(), $content = null)
     {
         $request  = new Request($method, $resource, $this->api);
         $response = new Response();
 
-        $request->addHeader($header);
+        $request->addHeader('Accept: application/json');
+        if(!empty($headers)){
+            $request->addHeaders($headers);
+        }
 
         if(!is_null($content)){
             $request->setContent(json_encode($content));
@@ -88,17 +91,19 @@ class Serviio
 
     protected function get($resource)
     {
-        return $this->request('GET', $resource, 'Accept: application/json');
+        return $this->request('GET', $resource);
     }
 
     protected function post($resource, $content)
     {
-        return $this->request('POST', $resource, 'Content-Type: application/json; charset=UTF-8', $content);
+        $headers = array('Content-Type: application/json; charset=UTF-8');
+        return $this->request('POST', $resource, $headers, $content);
     }
 
     protected function put($resource, $content)
     {
-        return $this->request('PUT', $resource, 'Content-Type: application/json; charset=UTF-8', $content);
+        $headers = array('Content-Type: application/json; charset=UTF-8');
+        return $this->request('PUT', $resource, $headers, $content);
     }
 
     public function getPing()
