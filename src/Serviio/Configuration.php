@@ -5,7 +5,6 @@ namespace Serviio;
 class Configuration extends Serviio
 {
 
-
     public function getStatus()
     {
         return $this->get('status');
