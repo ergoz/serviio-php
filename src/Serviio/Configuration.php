@@ -5,6 +5,16 @@ namespace Serviio;
 class Configuration extends Serviio
 {
 
+    public function getServiceStatus()
+    {
+        return $this->get('service-status');
+    }
+
+    public function getLibraryStatus()
+    {
+        return $this->get('library-status');
+    }
+
     public function getStatus()
     {
         return $this->get('status');
@@ -23,16 +33,6 @@ class Configuration extends Serviio
             $data['boundIPAddress'] = $boundIPAddress;
         }
         return $this->put('status', $data);
-    }
-
-    public function getServiceStatus()
-    {
-        return $this->get('service-status');
-    }
-
-    public function getLibraryStatus()
-    {
-        return $this->get('library-status');
     }
 
     /**
