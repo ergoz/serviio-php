@@ -88,4 +88,9 @@ class Serviio
     {
         return $this->get('ping');
     }
+
+    public function getApplication()
+    {
+        return $this->get('application');
+    }
 }
