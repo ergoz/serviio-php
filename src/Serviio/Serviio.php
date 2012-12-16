@@ -44,7 +44,7 @@ class Serviio
      *
      * @param array $options
      */
-    public function setOptions(array $options = array())
+    private function setOptions(array $options = array())
     {
         $this->options = array_merge($this->defaults, $options);
         $this->setApi();
