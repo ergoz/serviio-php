@@ -10,9 +10,18 @@ class Configuration extends Serviio
         return $this->get('status');
     }
 
+    public function getServiceStatus()
+    {
+        return $this->get('service-status');
+    }
+
+    public function getLibraryStatus()
+    {
+        return $this->get('library-status');
+    }
+
     public function action($operation, $parameters = null)
     {
-
         $data = array('name' => $operation);
 
         if (!is_null($parameters)) {
