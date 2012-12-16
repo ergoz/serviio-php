@@ -10,6 +10,21 @@ class Configuration extends Serviio
         return $this->get('status');
     }
 
+    public function putStatus($renderers, $boundIPAddress = null)
+    {
+        if($this->version !== 'PRO') {
+            foreach($renderers as $renderer){
+                $renderers[$renderer] = array_merge($renderer, array('accessGroups' => 1));
+            }
+        }
+
+        $data['renderers'] = $renderers;
+        if(!is_null($boundIPAddress)){
+            $data['boundIPAddress'] = $boundIPAddress;
+        }
+        return $this->put('status', $data);
+    }
+
     public function getServiceStatus()
     {
         return $this->get('service-status');
