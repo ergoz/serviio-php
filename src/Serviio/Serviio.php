@@ -96,6 +96,11 @@ class Serviio
         return $this->request('POST', $resource, 'Content-Type: application/json; charset=UTF-8', $content);
     }
 
+    protected function put($resource, $content)
+    {
+        return $this->request('PUT', $resource, 'Content-Type: application/json; charset=UTF-8', $content);
+    }
+
     public function getPing()
     {
         return $this->get('ping');
