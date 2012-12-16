@@ -20,6 +20,7 @@ class Configuration extends Serviio
         return $this->get('status');
     }
 
+    // TODO not sure how this used and how it should be handled.
     public function putStatus($renderers, $boundIPAddress = null)
     {
         if($this->version !== 'PRO') {

@@ -4,9 +4,9 @@ namespace Serviio;
 
 class CDS extends Serviio
 {
-    public function __construct(array $options = array())
+    public function __construct(array $uri = array())
     {
-        $options = array_merge($options, array('service' => '/cds/', 'port' => '23424'));
-        parent::__construct($options);
+        $uri = array_merge($uri, array('service' => '/cds/', 'port' => '23424'));
+        parent::__construct($uri);
     }
 }
