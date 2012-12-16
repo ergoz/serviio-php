@@ -12,7 +12,7 @@ class Serviio
     /**
      * @var array
      */
-    private $defaults = array(
+    private static $defaults = array(
         'host'    => '127.0.0.1',
         'port'    => '23423',
         'secure'  => false,
@@ -26,10 +26,10 @@ class Serviio
     protected $license = null;
 
     /**
-     * Contains all parts of the api url
+     * Contains all parts of the uri scheme
      * @var array
      */
-    protected $options = array();
+    protected $uri = array();
 
     /**
      * Api url
@@ -57,15 +57,15 @@ class Serviio
      */
     private function setOptions(array $options = array())
     {
-        $this->options = array_merge($this->defaults, $options);
+        $this->uri = array_merge(self::$defaults, $options);
         $this->setApi();
     }
 
     private function setApi()
     {
         $api = sprintf(
-            '%s://' . $this->options['host'] . ':' . $this->options['port'] . $this->options['service'],
-            $this->options['secure'] ? 'https' : 'http'
+            '%s://' . $this->uri['host'] . ':' . $this->uri['port'] . $this->uri['service'],
+            $this->uri['secure'] ? 'https' : 'http'
         );
         $this->api = $api;
     }
