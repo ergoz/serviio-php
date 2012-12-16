@@ -59,7 +59,7 @@ class Serviio
         $this->api = $api;
     }
 
-    private function get($resource)
+    protected function get($resource)
     {
         $request  = new Request('GET', $resource, $this->api);
         $response = new Response();
@@ -71,7 +71,7 @@ class Serviio
         return $response;
     }
 
-    private function post($resource, $content)
+    protected function post($resource, $content)
     {
         $request  = new Request('POST', $resource, $this->api);
         $response = new Response();
