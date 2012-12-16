@@ -78,7 +78,7 @@ class Serviio
         $request->addHeader($header);
 
         if(!is_null($content)){
-            $request->setContent($content);
+            $request->setContent(json_encode($content));
         }
 
         $client = new Curl();

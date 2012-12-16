@@ -36,6 +36,6 @@ class Configuration extends Serviio
             $data += $parameters;
         }
 
-        return $this->post('action', json_encode($data));
+        return $this->post('action', $data);
     }
 }
