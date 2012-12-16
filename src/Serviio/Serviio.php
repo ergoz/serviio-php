@@ -34,7 +34,7 @@ class Serviio
     protected $api = null;
 
     /**
-     * @param array $options
+     * @param array $uri
      */
     public function __construct(array $uri = array())
     {
