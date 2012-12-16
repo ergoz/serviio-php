@@ -19,11 +19,7 @@ class Serviio
         'service' => '/rest/'
     );
 
-    protected $edition = null;
-
-    protected $version = null;
-
-    protected $license = null;
+    protected $data = null;
 
     /**
      * Contains all parts of the uri scheme
@@ -45,9 +41,7 @@ class Serviio
         $this->setOptions($options);
 
         $response = $this->getApplication();
-        foreach(json_decode($response->getContent()) as $key => $value){
-            $this->{$key} = $value;
-        }
+        $this->data = json_decode($response->getContent());
     }
 
     /**
