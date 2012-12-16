@@ -29,7 +29,7 @@ class Serviio
      * Api url
      * @var string
      */
-    protected $api;
+    protected $api = null;
 
     /**
      * @param array $options
