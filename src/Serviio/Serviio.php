@@ -16,7 +16,7 @@ class Serviio
         'host'    => '127.0.0.1',
         'port'    => '23423',
         'secure'  => false,
-        'service' => '/rest/'
+        'service' => '/rest'
     );
 
     protected $data = null;
@@ -92,11 +92,11 @@ class Serviio
 
     public function getPing()
     {
-        return $this->get('ping');
+        return $this->get('/ping');
     }
 
     public function getApplication()
     {
-        return $this->get('application');
+        return $this->get('/application');
     }
 }
