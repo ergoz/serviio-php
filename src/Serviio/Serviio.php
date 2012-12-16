@@ -44,6 +44,11 @@ class Serviio
         $this->data = json_decode($response->getContent());
     }
 
+    public function __set($name, $value)
+    {
+        $this->{$name} = $value;
+    }
+
     /**
      * Change any of the default options
      *
