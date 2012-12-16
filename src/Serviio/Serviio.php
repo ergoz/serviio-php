@@ -16,7 +16,7 @@ class Serviio
         'host'    => '127.0.0.1',
         'port'    => '23423',
         'secure'  => false,
-        'path' => '/rest/'
+        'service' => '/rest/'
     );
 
     /**
@@ -53,7 +53,7 @@ class Serviio
     private function setApi()
     {
         $api = sprintf(
-            '%s://' . $this->options['host'] . ':' . $this->options['port'] . $this->options['path'],
+            '%s://' . $this->options['host'] . ':' . $this->options['port'] . $this->options['service'],
             $this->options['secure'] ? 'https' : 'http'
         );
         $this->api = $api;
