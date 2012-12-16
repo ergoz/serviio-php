@@ -36,28 +36,13 @@ class Serviio
     /**
      * @param array $options
      */
-    public function __construct(array $options = array())
+    public function __construct(array $uri = array())
     {
-        $this->setOptions($options);
+        $this->uri = array_merge(self::$defaults, $uri);
+        $this->setApi();
 
         $response = $this->getApplication();
         $this->data = json_decode($response->getContent());
-    }
-
-    public function __set($name, $value)
-    {
-        $this->{$name} = $value;
-    }
-
-    /**
-     * Change any of the default options
-     *
-     * @param array $options
-     */
-    private function setOptions(array $options = array())
-    {
-        $this->uri = array_merge(self::$defaults, $options);
-        $this->setApi();
     }
 
     private function setApi()
