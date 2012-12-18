@@ -39,7 +39,7 @@ class Serviio
 
     protected function isPro()
     {
-        if($this->appInfo->version === 'PRO') {
+        if($this->appInfo->edition === 'PRO') {
             return true;
         }
         return false;
