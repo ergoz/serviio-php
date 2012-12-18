@@ -17,7 +17,7 @@ class Serviio
         'service' => '/rest'
     );
 
-    protected $data = null;
+    protected $appInfo = null;
 
     /**
      * Http client
@@ -34,12 +34,12 @@ class Serviio
         $this->client = $client ? : new HttpClient(array_merge(self::$defaults, $uri));
 
         $response = $this->getApplication();
-        $this->data = json_decode($response->getContent());
+        $this->appInfo = json_decode($response->getContent());
     }
 
     protected function isPro()
     {
-        if($this->data->version === 'PRO') {
+        if($this->appInfo->version === 'PRO') {
             return true;
         }
         return false;
