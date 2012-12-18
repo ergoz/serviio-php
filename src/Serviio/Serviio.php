@@ -29,7 +29,7 @@ class Serviio
      * @param array      $uri
      * @param HttpClient $client
      */
-    public function __construct(array $uri = array(), HttpClient $client = null)
+    public function __construct($uri = array(), HttpClient $client = null)
     {
         $this->client = $client ? : new HttpClient(array_merge(self::$defaults, $uri));
 
