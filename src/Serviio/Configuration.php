@@ -47,7 +47,7 @@ class Configuration extends Serviio
      */
     public function getRefdata($property)
     {
-        return $this->get('/refdata/'.$property);
+        return $this->client->get('/refdata/'.$property);
     }
 
     /**
