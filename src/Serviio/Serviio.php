@@ -37,6 +37,14 @@ class Serviio
         $this->data = json_decode($response->getContent());
     }
 
+    protected function isPro()
+    {
+        if($this->data->version === 'PRO') {
+            return true;
+        }
+        return false;
+    }
+
     public function getPing()
     {
         return $this->client->get('/ping');
