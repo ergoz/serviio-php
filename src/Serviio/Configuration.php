@@ -23,7 +23,7 @@ class Configuration extends Serviio
     // TODO not sure how this used and how it should be handled.
     public function putStatus($renderers, $boundIPAddress = null)
     {
-        if($this->isPro()) {
+        if($this->isProEdition()) {
             foreach($renderers as $renderer){
                 $renderers[$renderer] = array_merge($renderer, array('accessGroups' => 1));
             }

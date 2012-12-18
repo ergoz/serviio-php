@@ -37,7 +37,7 @@ class Serviio
         $this->appInfo = json_decode($response->getContent());
     }
 
-    protected function isPro()
+    protected function isProEdition()
     {
         if($this->appInfo->edition === 'PRO') {
             return true;
