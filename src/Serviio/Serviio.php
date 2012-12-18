@@ -2,9 +2,7 @@
 
 namespace Serviio;
 
-use Buzz\Client\Curl;
-use Buzz\Message\Request;
-use Buzz\Message\Response;
+use Serviio\HttpClient;
 
 class Serviio
 {
@@ -22,72 +20,21 @@ class Serviio
     protected $data = null;
 
     /**
-     * Contains all parts of the uri scheme
-     * @var array
+     * Http client
+     * @var HttpClient
      */
-    protected $uri = array();
+    protected $client = null;
 
     /**
-     * Api url
-     * @var string
+     * @param array      $uri
+     * @param HttpClient $client
      */
-    protected $api = null;
-
-    /**
-     * @param array $uri
-     */
-    public function __construct(array $uri = array())
+    public function __construct(array $uri = array(), HttpClient $client = null)
     {
-        $this->uri = array_merge(self::$defaults, $uri);
-        $this->setApi();
+        $this->client = $client ? : new HttpClient(array_merge(self::$defaults, $uri));
 
         $response = $this->getApplication();
         $this->data = json_decode($response->getContent());
-    }
-
-    private function setApi()
-    {
-        $api = sprintf(
-            '%s://' . $this->uri['host'] . ':' . $this->uri['port'] . $this->uri['service'],
-            $this->uri['secure'] ? 'https' : 'http'
-        );
-        $this->api = $api;
-    }
-
-    private function request($method, $resource, $headers = array(), $content = null)
-    {
-        $request  = new Request($method, $resource, $this->api);
-        $response = new Response();
-
-        $request->addHeader('Accept: application/json');
-        if(!empty($headers)){
-            $request->addHeaders($headers);
-        }
-
-        if(!is_null($content)){
-            $request->setContent(json_encode($content));
-        }
-
-        $client = new Curl();
-        $client->send($request, $response);
-        return $response;
-    }
-
-    protected function get($resource)
-    {
-        return $this->request('GET', $resource);
-    }
-
-    protected function post($resource, $content)
-    {
-        $headers = array('Content-Type: application/json; charset=UTF-8');
-        return $this->request('POST', $resource, $headers, $content);
-    }
-
-    protected function put($resource, $content)
-    {
-        $headers = array('Content-Type: application/json; charset=UTF-8');
-        return $this->request('PUT', $resource, $headers, $content);
     }
 
     public function getPing()
