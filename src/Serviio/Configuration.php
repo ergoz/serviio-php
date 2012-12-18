@@ -7,17 +7,17 @@ class Configuration extends Serviio
 
     public function getServiceStatus()
     {
-        return $this->get('/service-status');
+        return $this->client->get('/service-status');
     }
 
     public function getLibraryStatus()
     {
-        return $this->get('/library-status');
+        return $this->client->get('/library-status');
     }
 
     public function getStatus()
     {
-        return $this->get('/status');
+        return $this->client->get('/status');
     }
 
     // TODO not sure how this used and how it should be handled.
@@ -33,7 +33,7 @@ class Configuration extends Serviio
         if(!is_null($boundIPAddress)){
             $data['boundIPAddress'] = $boundIPAddress;
         }
-        return $this->put('/status', $data);
+        return $this->client->put('/status', $data);
     }
 
     /**
@@ -68,6 +68,6 @@ class Configuration extends Serviio
             $data += $parameters;
         }
 
-        return $this->post('/action', $data);
+        return $this->client->post('/action', $data);
     }
 }

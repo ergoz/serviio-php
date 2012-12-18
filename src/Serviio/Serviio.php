@@ -39,11 +39,11 @@ class Serviio
 
     public function getPing()
     {
-        return $this->get('/ping');
+        return $this->client->get('/ping');
     }
 
     public function getApplication()
     {
-        return $this->get('/application');
+        return $this->client->get('/application');
     }
 }
