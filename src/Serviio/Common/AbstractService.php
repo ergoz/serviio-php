@@ -4,7 +4,7 @@ namespace Serviio\Common;
 
 use Serviio\Common\HttpClient;
 
-class AbstractService
+abstract class AbstractService
 {
 
     /**
