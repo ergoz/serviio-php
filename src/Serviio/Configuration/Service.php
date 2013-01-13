@@ -2,6 +2,8 @@
 
 namespace Serviio\Configuration;
 
+use Serviio\Common\AbstractService;
+
 class Service extends AbstractService
 {
 

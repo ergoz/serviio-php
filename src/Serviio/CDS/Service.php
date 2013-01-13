@@ -2,6 +2,8 @@
 
 namespace Serviio\CDS;
 
+use Serviio\Common\AbstractService;
+
 class Service extends AbstractService
 {
     public function __construct($uri = array())
