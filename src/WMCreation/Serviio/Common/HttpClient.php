@@ -1,6 +1,6 @@
 <?php
 
-namespace Serviio;
+namespace Serviio\Common;
 
 use Buzz\Client\Curl;
 use Buzz\Message\Request;

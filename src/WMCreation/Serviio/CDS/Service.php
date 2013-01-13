@@ -1,8 +1,8 @@
 <?php
 
-namespace Serviio;
+namespace Serviio\CDS;
 
-class CDS extends Serviio
+class Service extends AbstractService
 {
     public function __construct($uri = array())
     {

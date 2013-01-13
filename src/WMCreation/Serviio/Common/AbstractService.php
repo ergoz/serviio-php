@@ -1,10 +1,10 @@
 <?php
 
-namespace Serviio;
+namespace Serviio\Common;
 
-use Serviio\HttpClient;
+use Serviio\Common\HttpClient;
 
-class Serviio
+class AbstractService
 {
 
     /**
