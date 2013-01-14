@@ -3,11 +3,7 @@
     "description": "PHP wrapper for the Serviio API.",
     "version": "0.1",
     "type": "library",
-    "keywords": [
-        "serviio",
-        "php",
-        "api"
-    ],
+    "keywords": ["serviio", "php", "api"],
     "homepage": "http://github.com/moleculezz/serviio-php",
     "license": "MIT",
     "authors": [
