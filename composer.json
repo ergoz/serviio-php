@@ -1,5 +1,5 @@
 {
-    "name": "WMCreation/serviio-php",
+    "name": "wmcreation/serviio-php",
     "description": "PHP wrapper for the Serviio API.",
     "version": "0.1",
     "type": "library",
