@@ -1,7 +1,6 @@
 {
     "name": "wmcreation/serviio-php",
     "description": "PHP wrapper for the Serviio API.",
-    "version": "0.1",
     "type": "library",
     "keywords": ["serviio", "php", "api"],
     "homepage": "http://github.com/moleculezz/serviio-php",
