@@ -20,5 +20,6 @@
     "require": {
         "php": ">=5.3.0",
         "kriswallsmith/buzz": "v0.7"
-    }
+    },
+    "minimum-stability": "dev"
 }
