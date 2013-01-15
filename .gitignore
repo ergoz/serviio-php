@@ -1,0 +1,9 @@
+.DS_Store
+.idea/
+vendor/
+composer.lock
+bin/
+behat.yml
+features/
+Exception/
+Status/
